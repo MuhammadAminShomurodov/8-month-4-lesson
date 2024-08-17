@@ -19,7 +19,6 @@ const Products: React.FC = () => {
   const { loading, products, error, fetchProducts, addProduct, editProduct, deleteProduct } =
     useProductStore() as {
       loading: boolean;
-
       products: {
         id: number;
         title: string;
@@ -28,15 +27,12 @@ const Products: React.FC = () => {
       }[];
       error: string | null;
       fetchProducts: () => void;
-
-
       addProduct: (product: { title: string; images: string; price: number }) => Promise<void>;
       editProduct: (product: { id: number; title: string; images: string; price: number }) => Promise<void>;
       deleteProduct: (id: number) => Promise<void>;
     };
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-
 
   const [currentProduct, setCurrentProduct] = useState<{
     id: number;
@@ -54,15 +50,11 @@ const Products: React.FC = () => {
     setIsModalOpen(true);
   };
 
-
   const showEditModal = (product: {
     id: number;
-
-
     title: string;
     images: string;
     price: number;
-
   }) => {
     setCurrentProduct(product);
     form.setFieldsValue(product);
@@ -105,7 +97,6 @@ const Products: React.FC = () => {
           message: "Product Updated",
           description: "The product has been successfully updated.",
         });
-
         fetchProducts();
       } else {
         console.error("editProduct is not a function");
@@ -132,7 +123,6 @@ const Products: React.FC = () => {
           message: "Product Deleted",
           description: "The product has been successfully deleted.",
         });
-
         fetchProducts();
       } else {
         console.error("deleteProduct is not a function");

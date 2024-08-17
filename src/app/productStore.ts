@@ -6,7 +6,7 @@ export const useProductStore = create((set) => ({
   products: [],
   error: "",
   fetchProducts: async () => {
-    set((state) => ({
+    set((state: { loading: boolean; products: unknown[]; error: string }) => ({
       ...state,
       loading: true,
     }));
@@ -22,7 +22,7 @@ export const useProductStore = create((set) => ({
       set(() => ({
         loading: false,
         products: [],
-        error: err.message,
+        error: err instanceof Error ? err.message : String(err),
       }));
     }
   },
