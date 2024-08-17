@@ -6,7 +6,7 @@ import { HiChartPie } from "react-icons/hi";
 import { FaUsers, FaUserCircle } from "react-icons/fa";
 import { AiOutlineProduct } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import logo from "../assets/icons/logo.svg";
+// import logo from "../assets/icons/logo.svg";
 
 const { Header, Sider, Content } = Layout;
 
@@ -44,7 +44,7 @@ const App: React.FC = () => {
           }`}
         >
           <img
-            src={logo}
+            // src={logo}
             alt="Logo"
             style={{ width: collapsed ? 40 : 80, height: "auto" }} // Adjust size based on collapse state
           />
